@@ -1,18 +1,24 @@
 
 // https://devcenter.heroku.com/articles/mongolab
 // http://todomvc.com/examples/angularjs/#/
-var express  = require('express'),
-    mongoose = require('mongoose'),
-    bodyParser = require('body-parser'),
+var    express  = require('express');
+var    mongoose = require('mongoose');
+var    bodyParser = require('body-parser');
 
-    // Mongoose Schema definition
-    Schema = new mongoose.Schema({
-      id       : String, 
-      title    : String,
-      completed: Boolean
-    }),
 
-    Todo = mongoose.model('Todo', Schema);
+var Schema = mongoose.Schema;
+
+var UserSchema = new Schema({
+  userName:  String,
+  password: String
+});
+
+var User = mongoose.model('User', UserSchema);
+
+var JakobWidmer = new User({userName: 'köbi', password: 'köbi'});
+console.log('User Created: ' + JakobWidmer.userName);
+
+
 
 /*
  * I’m sharing my credential here.
