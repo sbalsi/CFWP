@@ -56,17 +56,23 @@
 
 
 
-		<div ng-view></div>
+		<div ui-view></div>
 
 
 
 
 		<script src="node_modules/angular/angular.js"></script>
 		<script src="components/angular-route.js"></script>
-		<!--<script src="node_modules/angular-route/angular-route.js"></script>-->
+		<script src="components/angular-ui-router.js"></script>
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
 		<script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
 		<script src="app.js"></script>
-		<script src="js/controllers/login.js"></script>
+		<script src="components/lodash.js"></script>
+		<script src="js/services/lodash.factory.js"></script>
+		<script src="js/services/DataHandler.service.js"></script>
+		<script src="js/controllers/welcomeCtrl.js"></script>
+		<script src="js/services/ServerData.service.js"></script>
+		<script src="js/controllers/loginCtrl.js"></script>
+
 	</body>
 </html>
