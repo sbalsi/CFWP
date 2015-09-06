@@ -5,10 +5,30 @@
 
 // Declare app level module which depends on views, and components
 angular.module('cfwp', [
-	'ngRoute',
-	'login'
+	'login',
+	'welcome',
+	'ui.router'
+
 
 ]).
-	config(['$routeProvider', function($routeProvider) {
-		$routeProvider.otherwise({redirectTo: '/login'});
-	}]);
+
+
+	config(function($stateProvider, $urlRouterProvider) {
+
+		$urlRouterProvider.otherwise('/login');
+
+		$stateProvider
+			.state('login', {
+				url: "/login",
+				templateUrl: "views/login.html",
+				controller: "LoginCtrl"
+			})
+			.state('welcome', {
+				url: "/welcome",
+				templateUrl: "views/welcome.html",
+				controller: "WelcomeCtrl"
+			})
+
+
+
+});
