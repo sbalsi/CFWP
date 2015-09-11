@@ -6,25 +6,31 @@ var    mongoose = require('mongoose');
 var    bodyParser = require('body-parser');
 
 
-var Schema = mongoose.Schema;
-
-var UserSchema = new Schema({
-  userName:  String,
-  password: String
+// Mongoose Schema definition
+Schema = new mongoose.Schema({
+  id       : String,
+  title    : String,
+  completed: Boolean
 });
 
-var User = mongoose.model('User', UserSchema);
-
-var JakobWidmer = new User({userName: 'köbi', password: 'köbi'});
-console.log('User Created: ' + JakobWidmer.userName);
+Todo = mongoose.model('Todo', Schema);
 
 
-
-
-mongoose.connect(process.env.MONGOLAB_URI, function (error) {
-    if (error) console.error(error);
-    else console.log('mongo connected');
+//TEST http://mongoosejs.com/docs/index.html
+var kittySchema = mongoose.Schema({
+  name: String
 });
+
+var Kitten = mongoose.model('Kitten', kittySchema);
+var silence = new Kitten({ name: 'Silence' });
+console.log(silence.name); // 'Silence'
+
+
+mongoose.connect('mongodb://admin:admin@ds041583.mongolab.com:41583/heroku_r2rb3j26');
+
+
+
+
 
 express()
   // https://scotch.io/tutorials/use-expressjs-to-get-url-and-post-parameters
