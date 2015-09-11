@@ -8,8 +8,34 @@
     </div>
 
     <div class="row">
+        <button type="submit" class="btn btn-default" ng-click="print()">Print</button>
+    </div>
+
+    <div class="row">
         <h1>{{user.userName}}</h1>
     </div>
+
+
+
+        <div class="form-inline">
+            <div class="form-group">
+                <input class="form-control" placeholder="Funktion eingeben" type="text" ng-model="functionInput" ng-model-instant />
+                <button class="btn btn-default" ng-click="addFunction()">+</button>
+            </div>
+
+        </div>
+
+        <ul>
+            <li ng-repeat="userfunction in functions">
+
+                {{userfunction.functionInput}}
+            </li>
+        </ul>
+
+
+
+
+
 
 
 
