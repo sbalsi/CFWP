@@ -19,7 +19,7 @@ Todo = mongoose.model('Todo', Schema);
 //TEST http://mongoosejs.com/docs/index.html
 var kittySchema = mongoose.Schema({
   name: String
-});
+}); 
 
 var Kitten = mongoose.model('Kitten', kittySchema);
 var silence = new Kitten({ name: 'Silence' });
