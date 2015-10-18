@@ -17,7 +17,7 @@ Todo = mongoose.model('Todo', Schema);
 
 
 //TEST http://mongoosejs.com/docs/index.html
-var kittySchema = mongoose.Schema({
+var kittySchema = new mongoose.Schema({
   name: String
 }); 
 
